@@ -154,7 +154,8 @@ section.feed img {
 /* using the timing variable from above */
 /*  can use the word 'ease' here, but there is variable bezier set up that is a bit better*/
 .fade-leave-active,
-.face-enter-active {
+.fade-enter-active,
+.fade-once-active {
   transition: opacity var(--timing) var(--bezier),
     transform var(--timing) var(--bezier);
 }
@@ -176,13 +177,53 @@ section.feed img {
 /* The old page goes away and the new page enters here */
 
 /* then the state we want the new page to be in at first */
-.fade-enter {
+.fade-enter,
+.fade-once {
   opacity: 0;
   transform: translate(0, 30px);
 }
 
 /* then the ending state of the new page */
-.fade-enter-to {
+.fade-enter-to,
+.fade-once-to {
   opacity: 1;
   transform: translate(0, 0);
+}
+
+/* This is outside Barba and only applies on initial page load when you first arrive at the website */
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translate(0, 30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* setting up animations */
+
+header h1,
+header p,
+header nav,
+footer {
+  animation: fade var(--timing) var(--bezier) both;
+}
+
+header h1 {
+  animation-delay: var(--timing);
+}
+
+header p {
+  animation-delay: calc(2 * var(--timing));
+}
+
+header nav {
+  animation-delay: calc(3 * var(--timing));
+}
+
+footer {
+  animation-delay: calc(4 * var(--timing));
 }

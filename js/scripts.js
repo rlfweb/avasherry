@@ -9,6 +9,8 @@ barba.init({
   transitions: [
     {
       name: "fade",
+      // add in Barba's once hook
+      once() {},
       // add Barba's beforeEnter hook to do things when a new page loads
       beforeEnter({ current, next, trigger }) {
         // variables to grab the three nav links
