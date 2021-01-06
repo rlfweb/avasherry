@@ -44,7 +44,9 @@ body.feed {
   --nav-underline-hover: rgba(255, 255, 255, 1);
 }
 
-header, section, footer {
+header,
+section,
+footer {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-flow: dense;
@@ -63,7 +65,9 @@ header {
   align-items: center;
 }
 
-header h1, header p, header nav {
+header h1,
+header p,
+header nav {
   grid-column: span 2;
 }
 
@@ -73,7 +77,8 @@ a {
   border-bottom: 0.1em solid var(--nav-underline);
 }
 
-a:hover, a.selected {
+a:hover,
+a.selected {
   border-bottom-color: var(--nav-underline-hover);
 }
 
@@ -141,4 +146,34 @@ section.feed img {
   width: 100%;
   object-fit: cover;
   grid-column: span 2;
+}
+
+/* BARBA */
+
+/* transition active state (same for leave and enter) */
+/* using the timing variable from above */
+/*  can use the word 'ease' here, but there is variable bezier set up that is a bit better*/
+.fade-leave-active,
+.face-enter-active {
+  transition: opacity var(--timing) var(--bezier);
+}
+
+/* initial state of the current page */
+.fade-leave {
+  opacity: 1;
+}
+
+/* then the state we want the current page to end up as */
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* then the state we want the new page to be in at first */
+.fade-enter {
+  opacity: 0;
+}
+
+/* then the ending state of the new page */
+.fade-enter-to {
+  opacity: 1;
 }
