@@ -155,25 +155,34 @@ section.feed img {
 /*  can use the word 'ease' here, but there is variable bezier set up that is a bit better*/
 .fade-leave-active,
 .face-enter-active {
-  transition: opacity var(--timing) var(--bezier);
+  transition: opacity var(--timing) var(--bezier),
+    transform var(--timing) var(--bezier);
 }
 
 /* initial state of the current page */
 .fade-leave {
   opacity: 1;
+  /* start in the same place you end in - don't move in x direction, don't move in y direction */
+  transform: translate(0, 0);
 }
 
 /* then the state we want the current page to end up as */
 .fade-leave-to {
   opacity: 0;
+  /* start 30px down the y axis */
+  transform: translate(0, 30px);
 }
+
+/* The old page goes away and the new page enters here */
 
 /* then the state we want the new page to be in at first */
 .fade-enter {
   opacity: 0;
+  transform: translate(0, 30px);
 }
 
 /* then the ending state of the new page */
 .fade-enter-to {
   opacity: 1;
+  transform: translate(0, 0);
 }
