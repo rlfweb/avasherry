@@ -29,6 +29,7 @@ barba.init({
         // to get any page to scroll smoothly to the top before it loads
         window.scrollTo({
           top: 0,
+          // If you don't want to see the scrollToTop function, you can remove the behaviour and it will scroll instantly to the top
           behavior: "smooth",
         });
       },

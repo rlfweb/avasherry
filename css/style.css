@@ -190,6 +190,7 @@ section.feed img {
   transform: translate(0, 0);
 }
 
+/* A good rule of thumb is if it’s outside Barba tags, we can use animation in CSS, if it is inside, we can use Barba's ONCE to manage that transition */
 /* This is outside Barba and only applies on initial page load when you first arrive at the website */
 
 @keyframes fade {
