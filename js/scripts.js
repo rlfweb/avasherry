@@ -1,3 +1,6 @@
+// save body as a variable so can use it thorughout the site
+const bodyTag = document.querySelector("body");
+
 // tell barba to use the css plugin
 barba.use(barbaCss);
 
@@ -29,4 +32,20 @@ barba.init({
       },
     },
   ],
+  views: [
+    // Within the namespace of "feed", then before you enter, add the class "feed" to the body tag
+    {
+      namespace: "feed",
+      beforeEnter() {
+        bodyTag.classList.add("feed");
+      },
+      // And then before you leave the "feed" page, remove the class "feed" from the body tag
+      beforeLeave() {
+        bodyTag.classList.remove("feed");
+      },
+    },
+  ],
 });
+
+// Transitions is somethng that doesn't matter what page or area of the site you are going to
+// Views is for a particular page or area of the site

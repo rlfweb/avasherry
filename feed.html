@@ -9,7 +9,7 @@
     <link href="/css/_base.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="feed">
     <header>
       <h1>Ava Sherry</h1>
       <p>Portfolio</p>
@@ -21,9 +21,9 @@
       </nav>
     </header>
 
-    <!-- don't want to transition header and footer so insert main tags just around content we want to transition -->
+    <!-- don't want to transition header and footer so insert main tags just around content we want to transition (and on this feed page, add a data-barba-namespace of "feed") -->
     <main data-barba="wrapper">
-      <section class="feed" data-barba="container">
+      <section class="feed" data-barba="container" data-barba-namespace="feed">
         <img src="/images/image2.jpg" />
         <img src="/images/image3.jpg" />
         <img src="/images/image4.jpg" />
